@@ -1,13 +1,18 @@
 def hello_t(arr)
 
-  i = 0
+  if block_given?
+    i = 0
 
-  while i < arr.length
-    yield arr[i]
-    i += 1
+    while i < arr.length
+      yield arr[i]
+      i += 1
+    end
+
+    arr
+  else
+    puts "dude, you use a block with this method"
   end
 
-  arr
 
 end
 
